@@ -1,0 +1,47 @@
+ <head> 
+<%= stylesheet_link_tag "signup", "data-turbo-track": "reload" %>
+</head>
+  <div class="mainContainer">
+        <nav class="navbar navbar-expand-lg bg-danger d-flex">
+            <div class="container-fluid justify-content-center">
+                  <%= image_tag("logoOxxo.png", width: "10%") %>
+                <h2 class="text-white fw-bold px-4">Administración</h2>
+            </div>
+        </nav>
+ <div class="container formContainer">
+            <h3 class="fw-bold mb-4 justify-content-center d-flex">Registro</h3>
+              <div class="container justify-content-center d-flex">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "justify-content-center"}, data: { controller: "hello"}) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="inputs mb-3">
+    <div class="row">
+      <%= f.label :email, class: "form-label" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+    </div>
+  </div>
+
+  <div class="inputs mb-3">
+                        <div class="row mb-3">
+    <%= f.label :password, "Contraseña (minimo 6 caracteres)", class: "form-label" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+  </div>
+
+<div class="row mb-3">
+    <%= f.label :password_confirmation, "Confirmar contraseña" ,class: "form-label" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"%>
+  </div>
+
+  <div class="row mb-3">
+    <%= f.submit "Regístrate", id:"signup", class: "btn btn-primary mt-3 mb-4 d-flex justify-content-center" %>
+  </div>
+  </div>
+  <%= link_to "Iniciar sesion", new_user_session_path,  class: " d-flex justify-content-center" %>
+<% end %>
+
+            </div>
+
+        </div>
+    </div>
+

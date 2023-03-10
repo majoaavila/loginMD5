@@ -4,7 +4,7 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-xs-6">
-							<h2><b>Clientes</b></h2>
+							<h2><b>Clientes </b></h2>
 						</div>
 						<div class="col-xs-6">
 							<a href="#addCostumerModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Nuevo cliente</span></a>
@@ -187,4 +187,4 @@
 			</div>
 		</div>        
     </div>
-	
+    <%= link_to "Cerrar", destroy_user_session_path, data: {"turbo-method": :delete} %>
